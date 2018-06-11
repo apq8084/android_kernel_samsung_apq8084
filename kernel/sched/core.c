@@ -1941,6 +1941,11 @@ void sched_fork(struct task_struct *p)
 #endif
 
 	__sched_fork(p);
+
+#ifdef CONFIG_CPU_FREQ_STAT
+	cpufreq_task_stats_alloc(p);
+#endif
+
 	/*
 	 * We mark the process as running here. This guarantees that
 	 * nobody will actually run it, and a signal or other external
