@@ -429,7 +429,8 @@ int msm_create_session(unsigned int session_id, struct video_device *vdev)
 	msm_init_queue(&session->stream_q);
 	msm_enqueue(msm_session_q, &session->list);
 	mutex_init(&session->lock);
-	rwlock_init(&session->stream_rwlock);
+	pr_debug("msm_create_session : Succeed!, session_id %d\n",
+		session_id);
 	return 0;
 }
 
