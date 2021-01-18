@@ -339,11 +339,11 @@ INSTALLKERNEL  := installkernel
 DEPMOD		= /sbin/depmod
 PERL		= perl
 CHECK		= sparse
-ifeq ($(CONFIG_CRYPTO_FIPS),)
-READELF	= $(CROSS_COMPILE)readelf
-export READELF
-cmd_fips_gen_hmac = $(CONFIG_SHELL) $(srctree)/scripts/fips_crypto_hmac.sh $(objtree)/vmlinux $(objtree)/System.map
-endif
+#ifeq ($(CONFIG_CRYPTO_FIPS),)
+#READELF	= $(CROSS_COMPILE)readelf
+#export READELF
+#cmd_fips_gen_hmac = $(CONFIG_SHELL) $(srctree)/scripts/fips_crypto_hmac.sh $(objtree)/vmlinux $(objtree)/System.map
+#endif
 
 # Use the wrapper for the compiler.  This wrapper scans for new
 # warnings and causes the build to stop upon encountering them.
